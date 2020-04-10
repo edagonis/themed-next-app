@@ -1,7 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from "next/document"
 import { ServerStyleSheet, createGlobalStyle } from "styled-components"
 
-const GlobalStyle = createGlobalStyle`
+const FontGlobalStyle = createGlobalStyle`
   body {
     font-family: 'Baloo 2', cursive,-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     text-rendering: optimizeLegibility;
@@ -38,8 +38,6 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <GlobalStyle />
-
         <Head>
           <script
             dangerouslySetInnerHTML={{
@@ -49,6 +47,7 @@ export default class MyDocument extends Document {
           />
         </Head>
         <body>
+          <FontGlobalStyle />
           <Main />
           <NextScript />
         </body>

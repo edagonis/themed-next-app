@@ -25,6 +25,8 @@ const GlobalStyle = createGlobalStyle(({ theme }) => {
         margin: 0;
         background-color: ${baseBackground};
         color: ${base};
+        font-family: 'Baloo 2', cursive,-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        text-rendering: optimizeLegibility;
         transition: color .6s cubic-bezier(0.37, 0, 0.63, 1), background-color .6s cubic-bezier(0.37, 0, 0.63, 1);
       }
   
