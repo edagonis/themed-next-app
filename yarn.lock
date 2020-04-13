@@ -2807,6 +2807,11 @@ lru-cache@^5.1.1:
   dependencies:
     yallist "^3.0.2"
 
+magic-sdk@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/magic-sdk/-/magic-sdk-1.0.1.tgz#d2c8ecd5af0ba34ff90358c72944b230d08e3446"
+  integrity sha512-CKNRMHfMazpYLnZDX7vNo/ICmHNVfgD1imG2shHrFfoNOqAe7up0BP5b4gHsWNUwimochgzXb3xbtazY3fCgoA==
+
 make-dir@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/make-dir/-/make-dir-2.1.0.tgz#5f0310e18b8be898cc07009295a30ae41e91e6f5"
