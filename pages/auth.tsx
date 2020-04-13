@@ -12,17 +12,15 @@ const Login = () => {
   } = useAuthentication()
 
   if (loading) return <h3>Loading...</h3>
-  if (error) return <p>error</p>
 
-  const { user } = data
-
-  return user ? (
+  return data && data.user ? (
     <>
-      <h1>Current user: {user.email}</h1>
+      <h1>Current user: {data.user.email}</h1>
       <button onClick={handleLogout}>Logout</button>
     </>
   ) : (
     <>
+      {error && "error"}
       <h1>Please sign up or login</h1>
       <form onSubmit={handleLogin}>
         <input

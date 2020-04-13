@@ -1,8 +1,10 @@
-import { useState, useCallback, useEffect } from "react"
+import { useState, useEffect } from "react"
 import { Magic } from "magic-sdk"
 import { MagicSDK } from "magic-sdk/dist/cjs/src/core/sdk"
-import { useQuery } from "@apollo/react-hooks"
-import gql from "graphql-tag"
+import { useQuery, useMutation } from "@apollo/react-hooks"
+
+import { CREATE_AUTHENTICATION_MUTATION } from "../queries/authentication"
+import { USER_QUERY } from "../queries/user"
 
 /**
  * Immediately resolves the user if he's a returning user
@@ -13,18 +15,18 @@ import gql from "graphql-tag"
 export const useAuthentication = () => {
   const [magic, setMagic] = useState<MagicSDK>()
 
-  const USER_QUERY = gql`
-    query {
-      user(
-        accessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3N1ZXIiOiJkaWQ6ZXRocjoweDY4RTA5MWExOTBjOTUzNURmMGUxOTgyMDk4MjYyMkRlRmRlNTI0QTQifQ.6oSaYFO1k2__Q_t3XItfu03t8XgTzOcNe00GhwI_ieI"
-      ) {
-        email
-        name
-      }
-    }
-  `
+  /** Does nothing on server side */
+  if (typeof window === "undefined") return { data: {} }
 
-  const { data, loading, error } = useQuery(USER_QUERY)
+  const accessToken =
+    window && JSON.parse(window.localStorage.getItem("accessToken"))
+
+  const [createAuthentication] = useMutation(CREATE_AUTHENTICATION_MUTATION)
+  const { data, loading, error } = useQuery(USER_QUERY, {
+    variables: {
+      accessToken,
+    },
+  })
 
   useEffect(() => {
     const {
@@ -45,14 +47,22 @@ export const useAuthentication = () => {
         email: email.toString(),
       })
 
-      localStorage.setItem("didToken", JSON.stringify(didToken))
-      //   resolveUser()
+      const result = await createAuthentication({ variables: { didToken } })
+      const {
+        data: {
+          createAuthentication: { accessToken },
+        },
+      } = result
+
+      localStorage.setItem("accessToken", JSON.stringify(accessToken))
+      window.location.reload()
     }
   }
 
   /** Handler for logging out */
   const handleLogout = async () => {
-    await fetch(`/api/auth/logout`, { method: "POST" })
+    localStorage.removeItem("accessToken")
+    window.location.reload()
   }
 
   const handleBuyApple = async () => {
