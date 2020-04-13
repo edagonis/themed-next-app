@@ -3,13 +3,22 @@ import React from "react"
 import { useAuthentication } from "../hooks/use-authentication"
 
 const Login = () => {
-  const { handleLogin, handleLogout, user, isLoading } = useAuthentication()
+  const {
+    handleLogin,
+    handleLogout,
+    data,
+    error,
+    loading,
+  } = useAuthentication()
 
-  if (isLoading) return <h3>Loading...</h3>
+  if (loading) return <h3>Loading...</h3>
+  if (error) return <p>error</p>
+
+  const { user } = data
 
   return user ? (
     <>
-      <h1>Current user: ${user}</h1>
+      <h1>Current user: {user.email}</h1>
       <button onClick={handleLogout}>Logout</button>
     </>
   ) : (

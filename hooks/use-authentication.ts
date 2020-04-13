@@ -1,6 +1,8 @@
 import { useState, useCallback, useEffect } from "react"
 import { Magic } from "magic-sdk"
 import { MagicSDK } from "magic-sdk/dist/cjs/src/core/sdk"
+import { useQuery } from "@apollo/react-hooks"
+import gql from "graphql-tag"
 
 /**
  * Immediately resolves the user if he's a returning user
@@ -10,8 +12,19 @@ import { MagicSDK } from "magic-sdk/dist/cjs/src/core/sdk"
  */
 export const useAuthentication = () => {
   const [magic, setMagic] = useState<MagicSDK>()
-  const [user, setUser] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
+
+  const USER_QUERY = gql`
+    query {
+      user(
+        accessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3N1ZXIiOiJkaWQ6ZXRocjoweDY4RTA5MWExOTBjOTUzNURmMGUxOTgyMDk4MjYyMkRlRmRlNTI0QTQifQ.6oSaYFO1k2__Q_t3XItfu03t8XgTzOcNe00GhwI_ieI"
+      ) {
+        email
+        name
+      }
+    }
+  `
+
+  const { data, loading, error } = useQuery(USER_QUERY)
 
   useEffect(() => {
     const {
@@ -21,36 +34,6 @@ export const useAuthentication = () => {
 
     setMagic(magic)
   }, [process])
-
-  /**
-   * Uses magic to retrieve logged in user,
-   * and then sets the current user state
-   */
-  const resolveUser = useCallback(
-    async function () {
-      if (!magic) return true
-
-      setIsLoading(true)
-      const res = await fetch("/api/user")
-
-      if (res.status === 200) {
-        let parsed = await res.json()
-        const { user } = parsed
-
-        setUser(user)
-      } else {
-        setUser(false)
-      }
-
-      setIsLoading(false)
-    },
-    [magic, setUser]
-  )
-
-  /** Make sure to resolve the user on component mounting */
-  useEffect(() => {
-    resolveUser()
-  }, [resolveUser])
 
   /* Handler for logging in */
   const handleLogin = async (e) => {
@@ -62,7 +45,7 @@ export const useAuthentication = () => {
         email: email.toString(),
       })
 
-      console.log(didToken)
+      localStorage.setItem("didToken", JSON.stringify(didToken))
       //   resolveUser()
     }
   }
@@ -70,13 +53,11 @@ export const useAuthentication = () => {
   /** Handler for logging out */
   const handleLogout = async () => {
     await fetch(`/api/auth/logout`, { method: "POST" })
-    resolveUser()
   }
 
   const handleBuyApple = async () => {
     await fetch(`/api/buy-apple`, { method: "POST" })
-    resolveUser()
   }
 
-  return { user, handleLogin, handleLogout, handleBuyApple, isLoading }
+  return { data, error, loading, handleLogin, handleLogout, handleBuyApple }
 }
