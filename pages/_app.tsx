@@ -3,6 +3,7 @@ import Router from "next/router"
 import withGA from "next-ga"
 import React from "react"
 import { ApolloProvider } from "@apollo/react-hooks"
+import { ThemeProvider } from "@zendeskgarden/react-theming"
 
 import ThemeWrapper from "../helpers/ThemeWrapper/ThemeWrapper"
 import { useApollo } from "../hooks/use-apollo"
@@ -15,7 +16,9 @@ class MyApp extends App {
     return (
       <ApolloProvider client={apollo}>
         <ThemeWrapper>
-          <Component {...pageProps} />
+          <ThemeProvider>
+            <Component {...pageProps} />
+          </ThemeProvider>
         </ThemeWrapper>
       </ApolloProvider>
     )

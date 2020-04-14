@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components"
 const GlobalStyle = createGlobalStyle(({ theme }) => {
   const {
     settings: {
-      small: { size },
+      small: { size, line_height },
     },
     color: { baseBackground, base, link },
   } = theme
@@ -21,7 +21,7 @@ const GlobalStyle = createGlobalStyle(({ theme }) => {
       
       body {
         font-size: ${size};
-        line-height: ${size};
+        line-height: ${line_height};
         margin: 0;
         background-color: ${baseBackground};
         color: ${base};
