@@ -11,21 +11,21 @@ interface Props {
   children?: React.ReactNode
 }
 
-const StyledText = styled.p<{ selectedSize: Size; textAlign: Align }>(
-  ({ theme, selectedSize, textAlign }) => {
+const StyledText = styled.p<{ size: Size; textAlign: Align }>(
+  ({ theme, size, textAlign }) => {
     const {
       settings: {
-        [selectedSize]: { size, line_height },
+        [size]: { point_size, line_height },
       },
       color: { special },
     } = theme
 
     return `
       margin: 0;
-      font-size: ${size};
+      font-size: ${point_size};
       line-height: ${line_height};
       text-align: ${textAlign};
-      color: ${selectedSize === "large" ? special : "inherit"}
+      color: ${size === "large" ? special : "inherit"}
   `
   }
 )
@@ -40,7 +40,7 @@ const Text: React.FC<Props> = ({
   className,
 }) => (
   <StyledText
-    selectedSize={size}
+    size={size}
     textAlign={align}
     className={className}
     data-testid="text"

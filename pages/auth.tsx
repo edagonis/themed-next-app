@@ -5,6 +5,7 @@ import styled from "styled-components"
 import { useAuthentication } from "../hooks/use-authentication"
 import Text from "../components/text/text"
 import Layout from "../components/layout/layout"
+import Input from "../components/input/input"
 
 const StyledTitleWrapper = styled.div`
   margin-bottom: 1.6rem;
@@ -25,12 +26,7 @@ const Login = () => {
         </Text>
       </StyledTitleWrapper>
       <form onSubmit={handleLogin}>
-        <input
-          type="email"
-          name="email"
-          required={true}
-          placeholder="Enter your email"
-        />
+        <Input name="email" size="small" placeholder="email" />
         {error && "error"}
         <button type="submit">Send</button>
       </form>

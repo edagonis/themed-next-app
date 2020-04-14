@@ -1,7 +1,7 @@
 import "styled-components"
 
 interface TypoSetting {
-  size: string
+  point_size: string
   line_height: string
 }
 

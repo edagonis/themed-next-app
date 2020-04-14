@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components"
 const GlobalStyle = createGlobalStyle(({ theme }) => {
   const {
     settings: {
-      small: { size, line_height },
+      small: { point_size, line_height },
     },
     color: { baseBackground, base, link },
   } = theme
@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle(({ theme }) => {
       }
       
       body {
-        font-size: ${size};
+        font-size: ${point_size};
         line-height: ${line_height};
         margin: 0;
         background-color: ${baseBackground};
@@ -42,7 +42,7 @@ const GlobalStyle = createGlobalStyle(({ theme }) => {
   
       p {
         margin: 0;
-        margin-bottom: ${size};
+        margin-bottom: ${point_size};
       }
   
       a {
@@ -51,8 +51,19 @@ const GlobalStyle = createGlobalStyle(({ theme }) => {
         color: ${link};
       }
   
-      text {
-        fill: ${base}!important;
+      input {
+        outline: none;
+        background: none;
+        border: none;
+        padding: .6rem 0;
+        text-indent: 1rem;
+        color: inherit;
+        font-size: inherit;
+        transition: all .4s cubic-bezier(1, 0.35, 0, 0.93);
+        
+        &:focus {
+          text-indent: 0;
+        }
       }
   
     `
