@@ -1,4 +1,4 @@
-# global-next-app
+# themed-next-app
 
 ## installation
 
