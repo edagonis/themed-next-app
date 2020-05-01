@@ -1,6 +1,4 @@
 import App from "next/app"
-import Router from "next/router"
-import withGA from "next-ga"
 import React from "react"
 
 import ThemeWrapper from "../helpers/ThemeWrapper/ThemeWrapper"
@@ -17,4 +15,4 @@ class MyApp extends App {
   }
 }
 
-export default withGA("UA-158796630-2", Router)(MyApp)
+export default MyApp
