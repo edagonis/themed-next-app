@@ -1,5 +1,5 @@
 {
-  "name": "comoda",
+  "name": "global-next-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,16 +8,8 @@
     "start": "next start"
   },
   "dependencies": {
-    "@apollo/react-hooks": "^3.1.4",
-    "apollo-cache-inmemory": "^1.6.5",
-    "apollo-client": "^2.6.8",
-    "apollo-link-http": "^1.5.17",
-    "graphql": "^15.0.0",
-    "graphql-tag": "^2.10.3",
-    "magic-sdk": "^1.0.1",
     "next": "9.3.4",
     "next-ga": "^2.3.4",
-    "node-fetch": "^2.6.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "styled-components": "^5.1.0"
