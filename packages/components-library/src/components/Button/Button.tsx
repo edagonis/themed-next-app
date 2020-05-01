@@ -1,6 +1,6 @@
-import React, { FunctionComponent } from "react"
+import React, { FC } from "react"
 
-const Button: FunctionComponent = () => {
+const Button: FC = () => {
   return <button>click here</button>
 }
 

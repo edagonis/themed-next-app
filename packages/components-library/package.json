@@ -1,5 +1,5 @@
 {
-  "name": "components-library",
+  "name": "themed-next-app-components-library",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,6 +16,7 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
+    "dev": "npx styleguidist server",
     "start": "npx styleguidist server",
     "build": "npx styleguidist build",
     "test": "react-scripts test",
