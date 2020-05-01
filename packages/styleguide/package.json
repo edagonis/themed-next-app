@@ -1,0 +1,19 @@
+{
+  "name": "themed-app-styleguide",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "styleguidist server",
+    "build": "styleguidist build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "react-docgen-typescript": "^1.16.4",
+    "react-styleguidist": "^11.0.5",
+    "ts-loader": "^7.0.2",
+    "typescript": "^3.8.3",
+    "webpack": "^4.43.0"
+  }
+}

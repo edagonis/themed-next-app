@@ -1,0 +1,26 @@
+import "styled-components"
+
+interface TypoSetting {
+  point_size: string
+  line_height: string
+}
+
+declare module "styled-components" {
+  export interface DefaultTheme {
+    color: {
+      baseBackground: string
+      base: string
+      special: string
+      link: string
+    }
+    settings: {
+      small: TypoSetting
+      medium: TypoSetting
+      large: TypoSetting
+      [key: string]: TypoSetting
+    }
+    breakpoints: {
+      desktop: string
+    }
+  }
+}
