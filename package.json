@@ -1,0 +1,26 @@
+{
+  "name": "themed-next-app",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edusssrdo/themed-next-app.git"
+  },
+  "author": {
+    "email": "edusssrdocampos@gmail.com",
+    "name": "Eduardo C. de Souza"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edusssrdo/themed-next-app/issues"
+  },
+  "homepage": "https://github.com/edusssrdo/themed-next-app#readme",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}
