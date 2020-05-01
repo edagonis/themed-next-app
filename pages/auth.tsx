@@ -16,7 +16,10 @@ const Login = () => {
 
   if (loading) return <h3>Loading...</h3>
 
-  if (data && data.user) return Router.push("/")
+  if (data && data.user) {
+    Router.push("/")
+    return <p>redirecting...</p>
+  }
 
   return (
     <Layout>
