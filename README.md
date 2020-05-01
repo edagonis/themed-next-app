@@ -1,4 +1,4 @@
-# global-next-app
+# typescript-themed-next-app
 
 ## installation
 
