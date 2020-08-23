@@ -1,26 +1,40 @@
 {
-  "name": "themed-next-app",
-  "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/edusssrdo/themed-next-app.git"
-  },
+  "name": "global-health-monitor-web",
   "author": {
-    "email": "edusssrdocampos@gmail.com",
-    "name": "Eduardo C. de Souza"
+    "name": "Eduardo Campos de Souza",
+    "email": "eduardocamposdev@gmail.com"
   },
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/edusssrdo/themed-next-app/issues"
-  },
-  "homepage": "https://github.com/edusssrdo/themed-next-app#readme",
+  "version": "0.1.0",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ]
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@types/mysql": "^2.15.14",
+    "@types/theme-ui": "^0.3.4",
+    "js-sha1": "^0.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.1.0",
+    "next": "9.4.4",
+    "next-ga": "^2.3.4",
+    "nookies": "^2.3.2",
+    "normalize.css": "^8.0.1",
+    "nprogress": "^0.2.0",
+    "react": "16.13.1",
+    "react-data-table-component": "^6.9.6",
+    "react-dom": "16.13.1",
+    "react-hook-form": "^6.0.8",
+    "sequelize": "^6.3.3",
+    "styled-components": "^5.1.1",
+    "theme-ui": "^0.3.1"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/node": "^14.0.14",
+    "@types/react": "^16.9.41",
+    "@types/sequelize": "^4.28.9",
+    "typescript": "^3.9.5"
+  }
 }
