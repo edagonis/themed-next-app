@@ -1,6 +1,5 @@
 /** @jsx jsx */
-import Head from "next/head"
-import { jsx, Text, Link, useThemeUI } from "theme-ui"
+import { jsx, Text } from "theme-ui"
 
 import { Layout } from "../components/organisms/Layout/Layout"
 

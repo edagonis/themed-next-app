@@ -5,16 +5,16 @@ interface CustomTheme extends Omit<Theme, "colors"> {
 }
 
 const defaultColorPalette = {
-  primary0: "#1F0E03",
-  primary1: "#331707",
-  primary2: "#462009",
-  primary3: "#58280B",
-  primary4: "#7A370F",
-  secondary0: "#8A5413",
-  secondary1: "#B57033",
-  secondary2: "#BF8149",
-  secondary3: "#E29C5E",
-  secondary4: "#F7B77D",
+  primary0: "#120a10ff",
+  primary1: "#22141eff",
+  primary2: "#43263bff",
+  primary3: "#643858ff",
+  primary4: "#744266ff",
+  secondary0: "#d79f9dff",
+  secondary1: "#deb1afff",
+  secondary2: "#edd4d3ff",
+  secondary3: "#f4e6e5ff",
+  secondary4: "#fafafaff",
 }
 
 const theme: CustomTheme = {

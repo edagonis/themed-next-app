@@ -1,16 +1,11 @@
-import React, { useEffect, useState } from "react"
-import NextApp from "next/app"
+import React from "react"
 import Head from "next/head"
-import { parseCookies, destroyCookie } from "nookies"
-import withGA from "next-ga"
-import { Router } from "next/router"
 import { useThemeUI, ThemeProvider } from "theme-ui"
 
 import "nprogress/nprogress.css" //styles of nprogress
 import "normalize.css/normalize.css"
 import { createGlobalStyle } from "styled-components"
 
-import { AccountContext } from "../contexts/AccountContext"
 import defaultTheme from "../styles/theme"
 
 const GlobalStyleRenderer = () => {
@@ -45,12 +40,6 @@ const GlobalStyleRenderer = () => {
 }
 
 function App(props) {
-  const handleCookieDestruction = () => {
-    const { ctx } = props as any
-
-    destroyCookie(ctx, "authToken")
-  }
-
   const { Component, pageProps } = props
 
   return (
@@ -61,13 +50,7 @@ function App(props) {
       </Head>
       <GlobalStyleRenderer />
 
-      <AccountContext.Provider
-        value={{
-          onLogoutButtonClick: handleCookieDestruction,
-        }}
-      >
-        <Component {...pageProps} />
-      </AccountContext.Provider>
+      <Component {...pageProps} />
     </ThemeProvider>
   )
 }
