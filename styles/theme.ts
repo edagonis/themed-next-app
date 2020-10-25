@@ -12,7 +12,16 @@ const defaultColorPalette = {
 }
 
 const theme: CustomTheme = {
-  colors: defaultColorPalette,
+  colors: {
+    ...defaultColorPalette,
+    /** Generate light mode from default color palette, by swaping the variables */
+    modes: {
+      light: {
+        primary: defaultColorPalette.secondary,
+        secondary: defaultColorPalette.primary,
+      },
+    },
+  },
   fonts: {
     body:
       'Rubik, system-ui,  Roboto, "Segoe UI", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive, sans-serif',
