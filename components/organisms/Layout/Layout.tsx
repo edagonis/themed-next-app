@@ -24,7 +24,7 @@ const StyledTextDocument = (props) => {
         padding: "8rem 2.4rem",
         margin: "3.2rem 1.5rem",
         maxWidth: (type && "none") || "42rem",
-        backgroundColor: theme.colors.primary1,
+        backgroundColor: theme.colors.primary[1],
         boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
         overflow: "hidden",
 
@@ -36,7 +36,7 @@ const StyledTextDocument = (props) => {
           width: "32px",
           height: "32px",
           transform: "rotate(45deg)",
-          backgroundColor: theme.colors.primary0,
+          backgroundColor: theme.colors.primary[0],
           opacity: 0.4,
         },
 
@@ -71,8 +71,8 @@ export function Layout(props: IAppProps) {
     NProgress.configure({
       template: `
       <div class="bar"
-      style="background: ${theme.colors.secondary3}" role="bar">
-        <div class="peg" style="box-shadow: 0 0 10px ${theme.colors.secondary3}, 0 0 5px ${theme.colors.secondary3}">
+      style="background: ${theme.colors.secondary[3]}" role="bar">
+        <div class="peg" style="box-shadow: 0 0 10px ${theme.colors.secondary[3]}, 0 0 5px ${theme.colors.secondary[3]}">
         </div>
       </div>
       <div class="spinner" role="spinner">

@@ -32,7 +32,7 @@ const GlobalStyleRenderer = () => {
     }
 
     input:-webkit-autofill {
-      -webkit-text-fill-color: ${theme.colors.secondary2};
+      -webkit-text-fill-color: ${theme.colors.secondary[2]};
     }
   `
 

@@ -6,7 +6,7 @@ export const LoadingIcon = ({ size = "30px", centered = false }) => (
     className={`loading-icon ${centered ? "centered" : ""}`}
     width={size}
     height={size}
-    sx={{ stroke: "secondary0" }}
+    sx={{ stroke: "secondary.0" }}
     viewBox="0 0 100 100"
     preserveAspectRatio="xMidYMid"
   >

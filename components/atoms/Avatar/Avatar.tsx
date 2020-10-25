@@ -10,9 +10,9 @@ const AvatarWrapper = (props) => {
     <span
       className={className}
       sx={{
-        color: "secondary3",
-        backgroundColor: "primary2",
-        borderColor: "primary1",
+        color: "secondary.3",
+        backgroundColor: "primary.2",
+        borderColor: "primary.1",
         borderStyle: "solid",
       }}
     >
