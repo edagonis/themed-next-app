@@ -5,6 +5,8 @@ interface CustomTheme extends Omit<Theme, "colors"> {
 }
 
 const defaultColorPalette = {
+  /** From index 0 to 4, it means from darker to lighter */
+  /** Primary is darker tone, secondary is lighter tone to create contrast */
   primary: ["#120a10ff", "#22141eff", "#43263bff", "#643858ff", "#744266ff"],
   secondary: ["#d79f9dff", "#deb1afff", "#edd4d3ff", "#f4e6e5ff", "#fafafaff"],
 }
@@ -52,7 +54,7 @@ const theme: CustomTheme = {
         outline: "none",
       },
 
-      /** override browser agent */
+      /** override browser agent input autofill */
       "&:-webkit-autofill": {
         boxShadow: (theme) => `0 0 0 50px ${theme.colors.primary[1]} inset`,
         border: (theme) => `1px solid ${theme.colors.secondary[3]} !important`,
