@@ -34,6 +34,15 @@ const GlobalStyleRenderer = () => {
     input:-webkit-autofill {
       -webkit-text-fill-color: ${theme.colors.secondary[2]};
     }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
   `
 
   return <GlobalStyle />

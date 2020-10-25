@@ -20,6 +20,10 @@ export const LoadingIcon = ({ size = "30px", centered = false }) => (
       strokeDasharray="60 900"
       strokeLinecap="round"
       transform="rotate(25.6557 50 50)"
+      sx={{
+        animation: "rotate 1.5s infinite linear",
+        transformOrigin: "50px 50px",
+      }}
     >
       <animateTransform
         attributeName="transform"
