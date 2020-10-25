@@ -1,52 +1,12 @@
 import React from "react"
 import Head from "next/head"
-import { useThemeUI, ThemeProvider } from "theme-ui"
+import { ThemeProvider } from "theme-ui"
+import { Global } from "@emotion/core"
 
 import "nprogress/nprogress.css" //styles of nprogress
 import "normalize.css/normalize.css"
-import { createGlobalStyle } from "styled-components"
 
 import defaultTheme from "../styles/theme"
-
-const GlobalStyleRenderer = () => {
-  const { theme } = useThemeUI()
-
-  const GlobalStyle = createGlobalStyle`
-    html {
-      font-size: 62.5%;
-    }
-
-    html, body {
-      min-height: 100%
-    }
-
-    body {
-      font-family: 'Baloo 2', Roboto, "Segoe UI", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive, sans-serif;
-      font-size: 1.6rem;
-      text-rendering: optimizeLegibility;
-    }
-
-    img {
-      max-width: 100%;
-      heigith: auto;
-    }
-
-    input:-webkit-autofill {
-      -webkit-text-fill-color: ${theme.colors.secondary[2]};
-    }
-
-    @keyframes rotate {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
-  `
-
-  return <GlobalStyle />
-}
 
 function App(props) {
   const { Component, pageProps } = props
@@ -57,7 +17,19 @@ function App(props) {
         <title>Themed Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <GlobalStyleRenderer />
+      <Global
+        styles={{
+          html: {
+            fontSize: "62.5%",
+          },
+          "html, body ": {
+            minHeight: "100%",
+          },
+          "*": {
+            boxSizing: "border-box",
+          },
+        }}
+      />
 
       <Component {...pageProps} />
     </ThemeProvider>

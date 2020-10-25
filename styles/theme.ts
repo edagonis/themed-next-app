@@ -13,7 +13,7 @@ const theme: CustomTheme = {
   colors: defaultColorPalette,
   fonts: {
     body:
-      'Rubik, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+      'Rubik, system-ui,  Roboto, "Segoe UI", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive, sans-serif',
   },
   text: {
     heading: {
@@ -62,6 +62,8 @@ const theme: CustomTheme = {
   },
   styles: {
     root: {
+      fontSize: "1.6rem",
+      textRendering: "optimizeLegibility",
       fontFamily: "body",
       lineHeight: 1.45,
       color: "secondary.2",
@@ -85,6 +87,7 @@ const theme: CustomTheme = {
     },
     img: {
       maxWidth: "100%",
+      height: "auto",
     },
     a: {
       color: "secondary.3",
