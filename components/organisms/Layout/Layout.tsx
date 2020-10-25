@@ -1,64 +1,15 @@
 /** @jsx jsx */
-import { jsx, useThemeUI, Text, Link as ThemeLink } from "theme-ui"
+import { jsx, useThemeUI } from "theme-ui"
 
 import * as React from "react"
 import { Container } from "theme-ui"
 import NProgress from "nprogress"
 import Router from "next/router"
-import Link from "next/link"
+import { TextDocument } from "./TextDocument"
 
 export interface IAppProps {
   children: React.ReactNode
   type?: "full"
-}
-
-const StyledTextDocument = (props) => {
-  const { children, type } = props
-  const { theme } = useThemeUI()
-
-  return (
-    <div
-      sx={{
-        flex: "1 auto",
-        position: "relative",
-        padding: "8rem 2.4rem",
-        margin: "3.2rem 1.5rem",
-        maxWidth: (type && "none") || "42rem",
-        backgroundColor: theme.colors.primary[1],
-        boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-        overflow: "hidden",
-
-        "&::after, &::before": {
-          content: "''",
-          position: "absolute",
-
-          margin: "-16px",
-          width: "32px",
-          height: "32px",
-          transform: "rotate(45deg)",
-          backgroundColor: theme.colors.primary[0],
-          opacity: 0.4,
-        },
-
-        "&::before": {
-          top: 0,
-          right: 0,
-        },
-
-        "&::after": {
-          top: 0,
-          left: 0,
-        },
-
-        "@media (min-width: 45rem)": {
-          margin: 0,
-          marginRight: "3.2rem",
-        },
-      }}
-    >
-      {children}
-    </div>
-  )
 }
 
 export function Layout(props: IAppProps) {
@@ -105,7 +56,7 @@ export function Layout(props: IAppProps) {
             },
           }}
         >
-          <StyledTextDocument type={type}>{children}</StyledTextDocument>
+          <TextDocument type={type}>{children}</TextDocument>
         </div>
       </div>
     </Container>

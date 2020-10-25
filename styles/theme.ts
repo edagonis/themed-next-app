@@ -73,7 +73,7 @@ const theme: CustomTheme = {
   },
   styles: {
     root: {
-      fontSize: "1.6rem",
+      fontSize: "1.5rem",
       textRendering: "optimizeLegibility",
       fontFamily: "body",
       lineHeight: 1.45,
