@@ -1,5 +1,5 @@
 {
-  "name": "themed-next-app",
+  "name": "mmo-frontend",
   "author": {
     "name": "Eduardo Campos de Souza",
     "email": "eduardocamposdev@gmail.com"
@@ -13,12 +13,15 @@
   },
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
+    "@magic-sdk/admin": "^1.3.0",
     "apollo-cache-inmemory": "^1.6.6",
     "apollo-client": "^2.6.10",
     "apollo-link-http": "^1.5.17",
     "gql": "^1.1.2",
     "graphql": "^15.5.0",
+    "jsonwebtoken": "^8.5.1",
     "magic-sdk": "^4.2.1",
+    "mongoose": "^5.12.3",
     "next": "latest",
     "next-ga": "^2.3.4",
     "normalize.css": "^8.0.1",

@@ -12,9 +12,8 @@ export default function Home() {
       <main>
         <Layout>
           <Text as="h1" sx={{ fontSize: 22 }}>
-            Themed Next App
+            Welcome to Arcanus
           </Text>
-          <Text>abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcd</Text>
           <button
             onClick={(e) => {
               setColorMode(colorMode === "default" ? "light" : "default")

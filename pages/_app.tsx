@@ -18,7 +18,7 @@ function App(props) {
     <ApolloProvider client={apollo as any}>
       <ThemeProvider theme={defaultTheme}>
         <Head>
-          <title>Themed Next App</title>
+          <title>MMO Frontend</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <Global

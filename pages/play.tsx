@@ -27,6 +27,7 @@ export default function Play() {
     <div className="container">
       <main>
         {user && <Text>logged in as: {user.email}</Text>}
+        {user && <Text>characters: </Text>}
         {user && (
           <Text>
             <a onClick={handleLogout}>logout</a>
@@ -34,11 +35,7 @@ export default function Play() {
         )}
         {loading && <LoadingIcon />}
 
-        {user && (
-          <GameWithNoSSR
-            user={{ name: "Eduardo", email: "eduardofidera@gmail.com" }}
-          />
-        )}
+        {user && <GameWithNoSSR user={user} />}
       </main>
     </div>
   )
