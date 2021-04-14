@@ -14,7 +14,7 @@ function App(props) {
   return (
     <ThemeProvider theme={defaultTheme}>
       <Head>
-        <title>Themed Next App</title>
+        <title>OT Map Generator</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Global

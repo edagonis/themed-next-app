@@ -7,8 +7,8 @@ interface CustomTheme extends Omit<Theme, "colors"> {
 const defaultColorPalette = {
   /** From index 0 to 4, it means from darker to lighter */
   /** Primary is darker tone, secondary is lighter tone to create contrast */
-  primary: ["#120a10ff", "#22141eff", "#43263bff", "#643858ff", "#744266ff"],
-  secondary: ["#d79f9dff", "#deb1afff", "#edd4d3ff", "#f4e6e5ff", "#fafafaff"],
+  primary: ["#6d401fff", "#7c4e31ff", "#805534ff", "#935f38ff", "#a3734fff"],
+  secondary: ["#e2d9d3ff", "#d7cac2ff", "#ceb7a9ff", "#bc9882ff", "#ae8164ff"],
 }
 
 const theme: CustomTheme = {
@@ -77,7 +77,7 @@ const theme: CustomTheme = {
       textRendering: "optimizeLegibility",
       fontFamily: "body",
       lineHeight: 1.45,
-      color: "secondary.2",
+      color: "secondary.0",
       minHeight: "100%",
       background: (theme) =>
         `linear-gradient(to left bottom, ${Object.keys(theme.colors)

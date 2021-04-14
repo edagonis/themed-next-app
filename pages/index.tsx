@@ -1,9 +1,48 @@
 /** @jsx jsx */
+import { useState } from "react"
 import { jsx, Text, useColorMode } from "theme-ui"
 
 import { Layout } from "../components/organisms/Layout/Layout"
+import {
+  SettingsType,
+  MOUNTAIN_TYPE,
+} from "../components/molecules/SettingsForm"
+
+const DEFAULT_SETTINGS: SettingsType = {
+  SEED: "",
+  WIDTH: 1024,
+  HEIGHT: 1024,
+  VERSION: "10.98",
+  TERRAIN_ONLY: false,
+  GENERATION: {
+    A: 1,
+    B: 0.92,
+    C: 0.25,
+    CAVE_DEPTH: 20,
+    CAVE_ROUGHNESS: 0.45,
+    CAVE_CHANCE: 0.009,
+    SAND_BIOME: true,
+    EUCLIDEAN: false,
+    SMOOTH_COASTLINE: true,
+    ADD_CAVES: true,
+    WATER_LEVEL: 2,
+    EXPONENT: 1.4,
+    LINEAR: 6,
+    MOUNTAIN_TYPE: MOUNTAIN_TYPE.ICY,
+    FREQUENCIES: [
+      { f: 1, weight: 0.3 },
+      { f: 2, weight: 0.2 },
+      { f: 4, weight: 0.2 },
+      { f: 8, weight: 0.125 },
+      { f: 16, weight: 0.1 },
+      { f: 32, weight: 0.05 },
+      { f: 64, weight: 0.0025 },
+    ],
+  },
+}
 
 export default function Home() {
+  const [settings, setSettings] = useState(DEFAULT_SETTINGS)
   const [colorMode, setColorMode] = useColorMode()
 
   return (
@@ -11,7 +50,7 @@ export default function Home() {
       <main>
         <Layout>
           <Text as="h1" sx={{ fontSize: 22 }}>
-            Themed Next App
+            Open Tibia Map Generator
           </Text>
           <Text>abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcd</Text>
           <button
